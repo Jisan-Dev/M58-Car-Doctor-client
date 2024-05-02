@@ -1,18 +1,16 @@
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../assets/logo.svg';
-// import useAuth from '../../../hooks/useAuth';
-// import { useContext } from "react";
-// import { AuthContext } from "../../../providers/AuthProvider";
+import { useContext } from 'react';
+import { AuthContext } from '../providers/AuthProvider';
 
 const Header = () => {
-  // const { user, logOut } = useAuth();
-  // const {user, logOut} = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
 
-  // const handleLogOut = () => {
-  //   logOut()
-  //     .then(() => {})
-  //     .catch((error) => console.log(error));
-  // };
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
 
   const navItems = (
     <>
@@ -34,7 +32,7 @@ const Header = () => {
           About
         </NavLink>
       </li>
-      {/* {user?.email ? (
+      {user?.email ? (
         <>
           <li className="hover:text-primary">
             <Link to="/bookings">My Bookings</Link>
@@ -47,7 +45,7 @@ const Header = () => {
         <li className="hover:text-primary">
           <Link to="/login">Login</Link>
         </li>
-      )} */}
+      )}
     </>
   );
   return (
