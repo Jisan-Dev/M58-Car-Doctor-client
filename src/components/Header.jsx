@@ -17,7 +17,7 @@ const Header = () => {
       <li>
         <NavLink
           className={({ isActive, isPending }) =>
-            isPending ? 'pending' : isActive ? 'bg-primary text-white hover:bg-primary py-2 px-4 rounded-lg max-sm:text-base' : 'py-2 px-4 max-sm:text-base'
+            isPending ? 'pending' : isActive ? 'bg-primary text-white hover:bg-primary py-2 px-4 rounded-lg max-sm:text-base' : 'py-2 px-4 max-sm:text-base hover:text-primary'
           }
           to="/">
           Home
@@ -26,7 +26,7 @@ const Header = () => {
       <li>
         <NavLink
           className={({ isActive, isPending }) =>
-            isPending ? 'pending' : isActive ? 'bg-primary text-white hover:bg-primary py-2 px-4 rounded-lg max-sm:text-base' : 'py-2 px-4 max-sm:text-base'
+            isPending ? 'pending' : isActive ? 'bg-primary text-white hover:bg-primary py-2 px-4 rounded-lg max-sm:text-base' : 'py-2 px-4 max-sm:text-base hover:text-primary'
           }
           to="/about">
           About
