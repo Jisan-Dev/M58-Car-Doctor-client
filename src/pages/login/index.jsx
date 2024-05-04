@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import img from '../../assets/images/login/login.svg';
 import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider.jsx';
+import axios from 'axios';
 
 const Login = () => {
   const { loginUser } = useContext(AuthContext);
@@ -14,8 +15,13 @@ const Login = () => {
     console.log(email, password);
     loginUser(email, password)
       .then((result) => {
-        const user = result.user;
-        console.log(user);
+        const loggedInUser = result.user;
+        console.log(loggedInUser);
+        const user = { email };
+        // get access token
+        axios.post('http://localhost:5000/jwt', user).then((data) => {
+          console.log(data.data);
+        });
       })
       .catch((error) => console.log(error));
   };
