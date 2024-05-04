@@ -15,11 +15,23 @@ const CheckOut = () => {
       customerName: name,
       date: date,
       email: email,
+      img: service?.img,
       serviceId: service?._id,
       serviceName: service?.title,
       price: service?.price,
     };
-    console.log(bookingInfo);
+    fetch('http://localhost:5000/checkout', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(bookingInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          alert('service booked successfully');
+        }
+      });
   };
   return (
     <div className="container mx-auto">
