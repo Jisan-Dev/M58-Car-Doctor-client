@@ -35,7 +35,7 @@ const Header = () => {
       {user?.email ? (
         <>
           <li className="hover:text-primary">
-            <Link to="/bookings">My Bookings</Link>
+            <Link to="/my-bookings">My Bookings</Link>
           </li>
           <li className="hover:text-primary">
             <button onClick={handleLogOut}>Log out</button>

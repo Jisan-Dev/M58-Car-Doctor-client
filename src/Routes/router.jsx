@@ -5,6 +5,7 @@ import SignUp from '../pages/signup';
 import Login from '../pages/login';
 import ServiceDetails from '../pages/service-details';
 import CheckOut from '../pages/checkout';
+import Bookings from '../pages/bookings';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login />,
+      },
+      {
+        path: '/my-bookings',
+        element: <Bookings />,
       },
       {
         path: '/services/:id',
